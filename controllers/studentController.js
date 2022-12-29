@@ -1,4 +1,5 @@
  const Student = require("../models/AddStudent")
+ 
 exports.GetallStudent = async (req, res, next)=>{
     try{
         const NewStundent = await Student.find()

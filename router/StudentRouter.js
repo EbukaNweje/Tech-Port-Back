@@ -1,6 +1,6 @@
 const express = require("express")
 const StudentContriller = require("../controllers/studentController")
-const {verifyToken, verifyStudent, verifyAdmin} = require("../utils/VerifyToken")
+const {verifyStudent, verifyAdmin} = require("../utils/VerifyToken")
 
 const Routers = express.Router()
 

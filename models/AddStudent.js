@@ -3,20 +3,12 @@ const mongoose = require("mongoose")
 const StudentSchema = new mongoose.Schema({
     userName: {
         type: String,
-        require : [true, "First Name is Require"],
+        require : [true, "Username is Require"],
         unique: true
     },
-    firstName: {
+    fullName: {
         type: String,
         require : [true, "First Name is Require"],
-    },
-    lastName: {
-        type: String,
-        require : [true, "Last Name is Require"]
-    },
-    class: {
-        type: String,
-        require : [true, "Class is Require"]
     },
     email: {
         type: String,
@@ -32,10 +24,21 @@ const StudentSchema = new mongoose.Schema({
         require : [true, "Phone Number is Require"]
     },
 
-    Address: {
+    address: {
         type: String,
         require : [true, "Address is Require"]
     },
+
+    course: {
+        type: String,
+        require : [true, "Course is Require"]
+    },
+
+    assment: [{
+        type: mongoose.SchemaTypes.ObjectId,
+        ref: "assment"
+    }],
+
     image: {
         public_id: {
           type: String,
