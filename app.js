@@ -6,7 +6,9 @@ const Applications = require("./router/Applications")
 const course = require("./router/Course")
 const cookkieParser = require("cookie-parser")
 const fileUploader = require("express-fileupload")
+const cors = require("cors");
 const app = express()
+app.use(cors());
 
 app.use(fileUploader({
     useTempFiles: true
