@@ -37,7 +37,7 @@ exports.CreateApplications = async (req, res, next)=>{
 
 exports.GetallAplications = async (req, res, next) => {
     try{
-        const AllAplications = Applications.find()
+        const AllAplications = await Applications.find()
         res.status(200).json({
             message: "All Applications",
             data: {AllAplications}
