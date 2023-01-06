@@ -12,12 +12,12 @@ exports.CreateApplications = async (req, res, next)=>{
             email: req.body.email,
             gender: req.body.gender,
             phoneNumber: req.body.phoneNumber,
-            dateOfBirth: {
-                year: req.body.dateOfBirth.year,
-                month: req.body.dateOfBirth.month,
-                day: req.body.dateOfBirth.day,
-                birthYear: new Date(req.body.dateOfBirth.year, req.body.dateOfBirth.month - 1, req.body.dateOfBirth.day)
-            },
+            // dateOfBirth: {
+            //     year: req.body.dateOfBirth.year,
+            //     month: req.body.dateOfBirth.month,
+            //     day: req.body.dateOfBirth.day,
+            //     birthYear: new Date(req.body.dateOfBirth.year, req.body.dateOfBirth.month - 1, req.body.dateOfBirth.day)
+            // },
             countryOrigin: req.body.countryOrigin,
             countryResidence: req.body.countryResidence,
             CityOfResidence: req.body.CityOfResidence

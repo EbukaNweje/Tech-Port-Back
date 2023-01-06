@@ -18,30 +18,30 @@ const ApplicationsSchema = new mongoose.Schema({
         type: String,
         require : [true, "Your phone number is require"],
     },
-    dateOfBirth:{
-        year: {
-        type: Number,
-        require : [true, "Your date of birth is require"],
-        },
-        month: {
-        type: Number,
-        require : [true, "Your date of birth is require"],
-        },
-        day: {
-        type: Number,
-        require : [true, "Your date of birth is require"],
-        },
-        birthYear: {
-           type: String 
-        }
-    },
+    // dateOfBirth:{
+    //     year: {
+    //     type: Number,
+    //     require : [true, "Your date of birth is require"],
+    //     },
+    //     month: {
+    //     type: Number,
+    //     require : [true, "Your date of birth is require"],
+    //     },
+    //     day: {
+    //     type: Number,
+    //     require : [true, "Your date of birth is require"],
+    //     },
+    //     birthYear: {
+    //        type: String 
+    //     }
+    // },
     countryOrigin:{
         type: String,
-        require : [true, "Your country origin is require"],
+        require : [true, "Your country of origin is require"],
     },
     countryResidence:{
         type: String,
-        require : [true, "Your country residence is require"],
+        require : [true, "Your country of residence is require"],
     },
     CityOfResidence:{
         type: String,
