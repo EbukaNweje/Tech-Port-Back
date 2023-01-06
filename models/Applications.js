@@ -3,33 +3,33 @@ const mongoose = require("mongoose")
 const ApplicationsSchema = new mongoose.Schema({
     fullName: {
         type: String,
-        require : [true, "Your name is require"],
+        required : [true, "Your name is required"],
     },
     email:{
         type: String,
-        require : [true, "Your email is require"],
+        required : [true, "Your email is required"],
         unique: true
     },
     gender:{
         type: String,
-        require : [true, "Your gender is require"],
+        required : [true, "Your gender is required"],
     },
     phoneNumber:{
         type: String,
-        require : [true, "Your phone number is require"],
+        required : [true, "Your phone number is required"],
     },
     // dateOfBirth:{
     //     year: {
     //     type: Number,
-    //     require : [true, "Your date of birth is require"],
+    //     required : [true, "Your date of birth is required"],
     //     },
     //     month: {
     //     type: Number,
-    //     require : [true, "Your date of birth is require"],
+    //     required : [true, "Your date of birth is required"],
     //     },
     //     day: {
     //     type: Number,
-    //     require : [true, "Your date of birth is require"],
+    //     required : [true, "Your date of birth is required"],
     //     },
     //     birthYear: {
     //        type: String 
@@ -37,15 +37,15 @@ const ApplicationsSchema = new mongoose.Schema({
     // },
     countryOrigin:{
         type: String,
-        require : [true, "Your country of origin is require"],
+        required : [true, "Your country of origin is required"],
     },
     countryResidence:{
         type: String,
-        require : [true, "Your country of residence is require"],
+        required : [true, "Your country of residence is required"],
     },
     CityOfResidence:{
         type: String,
-        require : [true, "Your city of residence is require"],
+        required : [true, "Your city of residence is required"],
     },
 },
 

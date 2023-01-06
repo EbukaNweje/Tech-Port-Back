@@ -3,7 +3,7 @@ const mongoose = require("mongoose")
 const AssmentSchema = new mongoose.Schema({
     gitLink: {
         type: String,
-        require : [true, "Url is Require"],
+        required : [true, "Url is Require"],
     },
     student:{
         type: mongoose.SchemaTypes.ObjectId,

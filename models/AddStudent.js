@@ -3,35 +3,35 @@ const mongoose = require("mongoose")
 const StudentSchema = new mongoose.Schema({
     userName: {
         type: String,
-        require : [true, "Username is Require"],
+        required : [true, "Username is required"],
         unique: true
     },
     fullName: {
         type: String,
-        require : [true, "First Name is Require"],
+        required : [true, "First Name is required"],
     },
     email: {
         type: String,
-        require : [true, "Email is Require"],
+        required : [true, "Email is required"],
         unique: true
     },
     password: {
         type: String,
-        require : [true, "Email is Require"],
+        required : [true, "Email is required"],
     },
     phoneNumber: {
         type: Number,
-        require : [true, "Phone Number is Require"]
+        required : [true, "Phone Number is required"]
     },
 
     address: {
         type: String,
-        require : [true, "Address is Require"]
+        required : [true, "Address is required"]
     },
 
     course: {
         type: String,
-        require : [true, "Course is Require"]
+        required : [true, "Course is required"]
     },
 
     assment: [{
