@@ -25,12 +25,24 @@ exports.CreateApplications = async (req, res, next)=>{
         })
         newApplications.save()
 
-        res.status(200).json({
+        res.status(201).json({
             message: "Applications has been created ",
             data: {newApplications}
         })
 
     }catch (err) {
+        next(err)
+    }
+}
+
+exports.GetallAplications = async (req, res, next) => {
+    try{
+        const AllAplications = Applications.find()
+        res.status(200).json({
+            message: "All Applications",
+            data: {AllAplications}
+        })
+    }catch(err){
         next(err)
     }
 }

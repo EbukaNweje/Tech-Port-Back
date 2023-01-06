@@ -6,6 +6,6 @@ const Routers = express.Router()
 
 Routers.route("/").post([
     check('email', 'Please include a valid email').isEmail()], 
-    ApplicationsController.CreateApplications)
+    ApplicationsController.CreateApplications).get(ApplicationsController.GetallAplications)
 
 module.exports = Routers
