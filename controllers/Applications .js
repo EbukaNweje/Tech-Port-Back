@@ -1,5 +1,6 @@
 const Applications = require("../models/Applications")
 const {validationResult } = require('express-validator');
+const transporter = require("../utils/email")
 
 exports.CreateApplications = async (req, res, next)=>{
     try{
@@ -24,6 +25,27 @@ exports.CreateApplications = async (req, res, next)=>{
 
         })
         newApplications.save()
+        const mailOptions ={
+            from: process.env.USER,
+            to: newApplications.email,
+            subject: "Successful Registration",
+          html: `
+            <div style="width:100%; height: 50%; display:flex; justify-content: center;">
+            <img src="https://res.cloudinary.com/ebukanweje/image/upload/v1673283973/web_banner_qbodxw.jpg" alt="EmailImage" style="width:50%; height: 50%;"/>
+            </div>
+           <h4>Hi  ${newApplications.fullName}</h4>
+           <p>Congratulations on your successful registration for the tech training course! We look forward to seeing you at the first session and helping you enhance your skills and knowledge in the tech industry. See you soon!</p>
+       
+            `,
+        }
+  
+        transporter.sendMail(mailOptions,(err, info)=>{
+            if(err){
+                console.log(err.message);
+            }else{
+                console.log("Email has been sent to your inbox", info.response);
+            }
+        })
 
         res.status(201).json({
             message: "Applications has been created ",
