@@ -23,7 +23,8 @@ exports.register = async (req, res, next)=>{
           return res.status(400).json({ error: 'Username or email already in use'});
         } 
         else if(!user){
-          const result = await cloudinary.uploader.upload(
+          const result = await
+           cloudinary.uploader.upload(
             req.files.image.tempFilePath,
             (err, result) => {
               try {

@@ -62,6 +62,7 @@ exports.GetallAplications = async (req, res, next) => {
         const AllAplications = await Applications.find()
         res.status(200).json({
             message: "All Applications",
+            alldata: AllAplications.length,
             data: {AllAplications}
         })
     }catch(err){
