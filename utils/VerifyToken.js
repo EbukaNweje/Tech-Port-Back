@@ -12,13 +12,13 @@ const verifyToken = (req, res, next)=>{
     jwt.verify(token, process.env.JWT, (err, Student)=>{
         if(err)return next(createError(401, "token is not valid!"));
         req.Student = Student
+        // console.log(req.Student)
         next()
     })
 };
 
 const verifyStudent = (req, res, next)=>{
     verifyToken(req, res, next, ()=>{
-        console.log(req.Student.id)
         if(req.Student.id === req.params.id || req.Student.isAdmin){
             next()
         } else {
@@ -28,8 +28,7 @@ const verifyStudent = (req, res, next)=>{
 };
 
 const verifyAdmin = (req, res, next)=>{
-    verifyToken(req, res, next, ()=>{
-        console.log(req.Student.id)
+    verifyToken(req, res, ()=>{
         if(req.Student.isAdmin){
             next()
         } else {
